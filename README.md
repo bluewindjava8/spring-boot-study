@@ -10,3 +10,9 @@
 9. BasicErrorController?
 10. ObjectMapper
 11. RequestParam, pathvariable, requestBody --Done in RequestParamTest project
+12. Active profile
+13. Conditional Bean
+14. Bean order
+15. Simple properties  --Done in SimplePropertiesTest project
+16. Advance properties 
+17. Actuator/ SpringBootAdmin
