@@ -16,3 +16,4 @@
 15. Simple properties  --Done in SimplePropertiesTest project
 16. Advance properties 
 17. Actuator/ SpringBootAdmin
+18. AOP (method parameters logging)
