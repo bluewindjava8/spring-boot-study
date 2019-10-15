@@ -210,5 +210,38 @@ public class CustomerController {
 	@PostMapping("/postPerson")
 	public Person postStartDate(@RequestBody Person person) {
 		return person;
-	}	
+	}
+	
+	/*
+	 * If one path ("/test" in this case) maps to multiple controller methods, 
+	 * we will get the IllegalStateException: Ambiguous mapping.
+	 * As a result, the application startup will fail.
+	 */
+//	@GetMapping("/test")
+//	public String test1() {
+//		return "test1";
+//	}
+//	
+//	@GetMapping("/test")
+//	public String test2() {
+//		return "test2";
+//	}	
+	
+	/*
+	 * We can first map path "/hello" to all request methods using @RequestMapping("/hello"),
+	 * then map the same path "/hello" to more specific request method by using something like @GetMapping.
+	 * In this case, there will be no application startup failure, and the more specific mapping will override the more general mapping.
+	 * For example, in this case, when we access "/hello" with POST, PUT, DELETE, the more general method hello1() will be executed.
+	 * When we access "/hello" with GET, the more specific hello2() will be executed.
+	 */
+	
+	@RequestMapping("/hello")
+	public String hello1() {
+		return "hello1";
+	}
+	
+	@GetMapping("/hello")
+	public String hello2() {
+		return "hello2";
+	}		
 }
