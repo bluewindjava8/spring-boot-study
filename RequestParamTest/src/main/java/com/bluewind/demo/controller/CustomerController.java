@@ -1,5 +1,6 @@
 package com.bluewind.demo.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bluewind.demo.entity.Customer;
+import com.bluewind.demo.entity.Person;
 import com.bluewind.demo.repository.CustomerRepository;
 
 
@@ -175,4 +177,38 @@ public class CustomerController {
 		
 	}
 	
+	/*
+	 * If we pass "2019-10-06T15:00:00.000Z" or 1570374000000 as the query string, it will not work. ( ConversionFailedException)
+	 * http://127.0.0.1:8080/startdate?startDate=2019-10-06T15:00:00.000Z    -->failure
+	 * http://127.0.0.1:8080/startdate?startDate=1570374000000   -->failure
+	 * 
+	 */
+	@GetMapping("/startdate")
+	public String startDate(@RequestParam Timestamp startDate) {
+		return startDate.toGMTString();
+	}
+	
+	/*
+	 * If we put a json object in request body, jackson can do the date conversion for us automatically.
+	 * Jackson knows the ISO 8601 format like "2019-10-06T15:00:00.000Z" and "2019-10-07T00:00:00.000+0900", which contain timezone information in the string.
+	 * Jackson also knows the epoch time format like 1570374000000. 
+	 * 
+	 * Refer to the following links:
+	 * http://tutorials.jenkov.com/java-internationalization/simpledateformat.html
+	 * https://www.w3.org/TR/NOTE-datetime
+	 * 
+	 * This profile defines two ways of handling time zone offsets:
+		Times are expressed in UTC (Coordinated Universal Time), with a special UTC designator ("Z"). 
+		Times are expressed in local time, together with a time zone offset in hours and minutes. A time zone offset of "+hh:mm" indicates that the date/time uses a local time zone which is "hh" hours and "mm" minutes ahead of UTC. A time zone offset of "-hh:mm" indicates that the date/time uses a local time zone which is "hh" hours and "mm" minutes behind UTC. 
+		A standard referencing this profile should permit one or both of these ways of handling time zone offsets.
+		
+		Examples
+		1994-11-05T08:15:30-05:00 corresponds to November 5, 1994, 8:15:30 am, US Eastern Standard Time.
+		1994-11-05T13:15:30Z corresponds to the same instant.
+	 */
+	
+	@PostMapping("/postPerson")
+	public Person postStartDate(@RequestBody Person person) {
+		return person;
+	}	
 }
