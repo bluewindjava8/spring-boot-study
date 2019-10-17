@@ -17,3 +17,4 @@
 16. Advance properties 
 17. Actuator/ SpringBootAdmin
 18. AOP (method parameters logging)
+19. DB connection pool (hikari)
