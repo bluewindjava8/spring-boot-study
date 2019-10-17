@@ -1,0 +1,11 @@
+---
+instances: 1
+path: target/RequestParamTest-0.0.1-SNAPSHOT.jar
+buildpack: java_buildpack_v4
+#buildpack: java_buildpack_offline_v4
+env:
+   security.require-ssl: true
+   
+   server.tomcat.remote_ip_header: x-forwarded-for
+   server.tomcat.protocol_header: x-forwarded-proto
+stack: cflinuxfs3

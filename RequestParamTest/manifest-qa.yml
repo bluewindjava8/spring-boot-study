@@ -1,0 +1,15 @@
+---
+inherit: manifest.yml
+memory: 1536M
+applications:
+- name: RequestParamTest
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+    
+    logging.level.root: WARN
+    logging.level.com.bosch.iot.agriculture.fuji.web.config.ProfilingAspect: INFO
+  domains:
+  - apps.de1.bosch-iot-cloud.com
+  - internal.de1.bosch-iot-cloud.com
+  hosts:
+  - RequestParamTest-qa
