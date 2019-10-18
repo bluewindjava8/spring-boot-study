@@ -12,21 +12,51 @@ public class ProductInterceptorConfig implements WebMvcConfigurer {
 	
 	@Autowired
 	MyHandlerInterceptor myHandlerInterceptor;
+	
+	@Autowired
+	HisHandlerInterceptor hisHandlerInterceptor;	
 
+//	@Override
+//	public void addInterceptors(InterceptorRegistry registry) {
+//		//registry of interceptors is necessary for interceptors to work
+//		registry.addInterceptor(productControllerInterceptor);
+//		//Add a second handler interceptor
+//		registry.addInterceptor(myHandlerInterceptor);
+//		
+//		/* The execution order of interceptor is as below:
+	
+//		    Pre Handle method is Calling
+//			Pre Handle method is Calling in MyHandlerInterceptor
+//			Post Handle method is Calling in MyHandlerInterceptor
+//			Post Handle method is Calling
+//			Request and Response is completed in MyHandlerInterceptor
+//			Request and Response is completed
+	
+//		 */
+//	}
+	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		//registry of interceptors is necessary for interceptors to work
 		registry.addInterceptor(productControllerInterceptor);
 		//Add a second handler interceptor
 		registry.addInterceptor(myHandlerInterceptor);
+		//Add a third handler interceptor
+		registry.addInterceptor(hisHandlerInterceptor);		
 		
-		/* The execution order of interceptor is as below:
-		 *  Pre Handle method is Calling
+		/*  The execution order of interceptor is as below:
+		  
+		 	Pre Handle method is Calling
 			Pre Handle method is Calling in MyHandlerInterceptor
+			Pre Handle method is Calling in HisHandlerInterceptor
+			Post Handle method is Calling in HisHandlerInterceptor
 			Post Handle method is Calling in MyHandlerInterceptor
 			Post Handle method is Calling
+			Request and Response is completed in HisHandlerInterceptor
 			Request and Response is completed in MyHandlerInterceptor
 			Request and Response is completed
+			
 		 */
-	}
+
+	}	
 }
