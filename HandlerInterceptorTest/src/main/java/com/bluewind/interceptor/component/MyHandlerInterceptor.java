@@ -14,7 +14,19 @@ public class MyHandlerInterceptor implements HandlerInterceptor {
 			throws Exception {
 		System.out.println("Pre Handle method is Calling in MyHandlerInterceptor");
 
-		return true;
+		//return true;
+		return false;
+		
+		/* true if the execution chain should proceed with thenext interceptor or the handler itself. 
+		 * Else, DispatcherServlet assumesthat this interceptor has already dealt with the response itself.
+		 * 
+		 * If we return false the the second interceptor, the third interceptor will not be called. 
+		 * This execution order is as below and there is no contents in the response.
+		 * 
+		 *  Pre Handle method is Calling
+			Pre Handle method is Calling in MyHandlerInterceptor
+			Request and Response is completed
+		 */
 	}
 
 	@Override
