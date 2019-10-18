@@ -18,3 +18,4 @@
 17. Actuator/ SpringBootAdmin
 18. AOP (method parameters logging)
 19. DB connection pool (hikari)
+20. Http request/response handler 
