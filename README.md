@@ -14,8 +14,10 @@
 13. Conditional Bean
 14. Bean order
 15. Simple properties  [--Done in SimplePropertiesTest project]
-16. Advance properties (including loose name matching)
-17. Actuator/ SpringBootAdmin
+16. Advance properties ( loose name matching)
+17.1. Actuator [--Done in ActuatorTest project]
+17.2  SpringBootAdmin 
 18. AOP (method parameters logging)
 19. DB connection pool (hikari)
-20. Http request/response handler 
+20. Http request/response handler [--Done in HandlerInterceptorTest project]
+21
