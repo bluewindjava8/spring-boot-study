@@ -13,9 +13,9 @@ import com.bluewind.interceptor.model.Product;
 
 @RestController
 public class ProductController {
-	
+
 	private static Map<String, Product> productRepo = new HashMap<>();
-	
+
 	static {
 		Product honey = new Product();
 		honey.setId("1");

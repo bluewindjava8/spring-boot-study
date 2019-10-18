@@ -7,11 +7,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Component
 public class ProductInterceptorConfig implements WebMvcConfigurer {
-   @Autowired
-   ProductHandlerInterceptor productControllerInterceptor;
+	@Autowired
+	ProductHandlerInterceptor productControllerInterceptor;
 
-   @Override
-   public void addInterceptors(InterceptorRegistry registry) {
-      registry.addInterceptor(productControllerInterceptor);
-   }
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(productControllerInterceptor);
+	}
 }
