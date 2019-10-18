@@ -20,7 +20,7 @@ public class HisHandlerInterceptor implements HandlerInterceptor {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
+		response.addHeader("his", "his_header");
 		System.out.println("Post Handle method is Calling in HisHandlerInterceptor");
 	}
 

@@ -29,6 +29,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct() {
-		return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+		//return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+		return ResponseEntity.ok().header("test", "test_header").body(productRepo.values());
 	}
 }

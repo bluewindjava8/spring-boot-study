@@ -14,8 +14,8 @@ public class MyHandlerInterceptor implements HandlerInterceptor {
 			throws Exception {
 		System.out.println("Pre Handle method is Calling in MyHandlerInterceptor");
 
-		//return true;
-		return false;
+		return true;
+		//return false;
 		
 		/* true if the execution chain should proceed with thenext interceptor or the handler itself. 
 		 * Else, DispatcherServlet assumesthat this interceptor has already dealt with the response itself.
@@ -32,14 +32,14 @@ public class MyHandlerInterceptor implements HandlerInterceptor {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
+		response.addHeader("my", "my_header");
 		System.out.println("Post Handle method is Calling in MyHandlerInterceptor");
 	}
 
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception exception) throws Exception {
-
+		
 		System.out.println("Request and Response is completed in MyHandlerInterceptor");
 	}
 }
