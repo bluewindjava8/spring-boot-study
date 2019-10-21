@@ -20,4 +20,4 @@
 18. AOP (method parameters logging)
 19. DB connection pool (hikari)
 20. Http request/response handler [--Done in HandlerInterceptorTest project]
-21
+21. RestTemplate [--Done in RestAPIServerTest project and RestAPIClientTest project]
