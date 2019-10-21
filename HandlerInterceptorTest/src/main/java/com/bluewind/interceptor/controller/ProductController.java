@@ -27,9 +27,25 @@ public class ProductController {
 		productRepo.put(almond.getId(), almond);
 	}
 
-	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	@RequestMapping(value = "/v1/products", method = RequestMethod.GET)
 	public ResponseEntity<Object> getProduct() {
 		//return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
 		return ResponseEntity.ok().header("test", "test_header").body(productRepo.values());
 	}
+	
+	
+	@RequestMapping(value = "/v2/products", method = RequestMethod.GET)
+	public ResponseEntity<Object> getProductV2() {
+		//return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+		return ResponseEntity.ok().header("test_v2", "test_header_v2").body(productRepo.values());
+	}
+	
+	
+	@RequestMapping(value = "/v1/products_list", method = RequestMethod.GET)
+	public ResponseEntity<Object> getProductList() {
+		//return new ResponseEntity<>(productRepo.values(), HttpStatus.OK);
+		return ResponseEntity.ok().header("test_list", "test_header_list").body(productRepo.values());
+	}
+	
+		
 }
