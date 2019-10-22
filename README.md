@@ -5,7 +5,7 @@
 4. Cache
 5. Many  x  Many
 6. Async
-7. Scheduler
+7. Scheduler [--Done in SchedulerTest project]
 8. ConnectPool 
 9. BasicErrorController?
 10. ObjectMapper
