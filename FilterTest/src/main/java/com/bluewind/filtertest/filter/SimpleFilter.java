@@ -1,4 +1,4 @@
-package com.bluewind.filtertest.component;
+package com.bluewind.filtertest.filter;
 
 import java.io.IOException;
 
@@ -12,6 +12,12 @@ import javax.servlet.http.HttpServletResponseWrapper;
 
 import org.springframework.stereotype.Component;
 
+/*
+ * In the example below, SimpleFilter is registered by default for all the URL's in our application. 
+ * However, we may sometimes want a filter to only apply to certain URL patterns.
+   In this case, we have to remove the @Component annotation from the filter class definition 
+   and register the filter using a FilterRegistrationBean. Refer to FilterTestApplication.java's methods with @Bean annotation.
+ */
 @Component
 public class SimpleFilter implements Filter {
 
