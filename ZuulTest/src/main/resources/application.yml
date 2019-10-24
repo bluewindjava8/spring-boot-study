@@ -1,0 +1,17 @@
+server:
+  port: 9090
+
+zuul:
+  routes:
+    product:
+      path: /my-product/**
+      url: http://localhost:8080
+      
+      #This config will proxy /my-product/products to http://localhost:8080/products, and so on.
+      #About how to config zuul, refer to the two links below:
+      #https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html
+      #https://spring.io/guides/gs/routing-and-filtering/
+      
+    blue:
+      path: /api-test/**
+      url:  http://localhost:8080/bluewind
