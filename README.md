@@ -23,3 +23,5 @@
 21. RestTemplate [--Done in RestAPIServerTest project and RestAPIClientTest project]
 22. favicon.ico?
 23. File upload and download [--Done in FileUploadDownloadTest project]
+24. Zuul proxy [ --Done in ZuulTest project]
+25. Sleuth [ --Done in ZullTest and RestAPITest1 project]
