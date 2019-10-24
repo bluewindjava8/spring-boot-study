@@ -20,8 +20,6 @@
 18. AOP (method parameters logging)
 19. DB connection pool (hikari)
 20. Http request/response handler [--Done in HandlerInterceptorTest project]
-<<<<<<< Updated upstream
 21. RestTemplate [--Done in RestAPIServerTest project and RestAPIClientTest project]
-=======
-21. favicon.ico?
->>>>>>> Stashed changes
+22. favicon.ico?
+23. File upload and download [--Done in FileUploadDownloadTest project]
