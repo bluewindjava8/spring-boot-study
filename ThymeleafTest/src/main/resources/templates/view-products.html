@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "ISO-8859-1"/>
+      <title>View Products</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      
+      <script>
+         $(document).ready(function(){
+            $.getJSON("http://localhost:9090/products", function(result){
+            	console.log("aaaaaaa");
+               $.each(result, function(key,value) {
+            	   console.log("11111111");
+                  $("#productsJson").append(value.id+" "+value.name+" ");
+               }); 
+            });
+            
+            $.getJSON("http://localhost:9090/public/blue", function(result){
+            	console.log("bbbbbbbbbb");
+
+                $("#blue").append(result.id + " " + result.name);
+
+             });  
+            
+            $.getJSON("http://localhost:9090/public/green", function(result){
+            	console.log("ccccccccccc");
+                $.each(result, function(key,value) {
+                	console.log("333333333");
+                   $("#green").append(value);
+                }); 
+             });
+         });
+      </script>
+   </head>
+   
+   <body>
+      <div id = "productsJson"> </div>
+      <div id = "blue"></div>
+       <div id = "green"></div>     
+   </body>
+</html>

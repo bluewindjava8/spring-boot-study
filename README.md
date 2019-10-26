@@ -25,3 +25,4 @@
 23. File upload and download [--Done in FileUploadDownloadTest project]
 24. Zuul proxy [ --Done in ZuulTest project]
 25. Sleuth [ --Done in ZullTest and RestAPITest1 project]
+25. CORS [ -- Done in CORSTest project and ThymeleafTest project ] 
