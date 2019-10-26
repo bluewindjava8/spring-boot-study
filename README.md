@@ -27,3 +27,4 @@
 25. Sleuth [ --Done in ZullTest and RestAPITest1 project]
 25. CORS [ -- Done in CORSTest project and ThymeleafTest project ] 
 26. Flyway [ -- Done in FlywayTest project. (flyway with H2 DB)]
+27. Hystrix [ -- Done in HystrixTest project]
