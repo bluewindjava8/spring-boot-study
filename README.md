@@ -11,7 +11,7 @@
 10. ObjectMapper
 11. RequestParam, pathvariable, requestBody --Done in RequestParamTest project
 12. Active profile [--Done in ProfileTest project]
-13. Conditional Bean
+13. Conditional Bean, bean without default constructor
 14. Bean order
 15. Simple properties  [--Done in SimplePropertiesTest project]
 16. Advance properties ( loose name matching)
@@ -24,7 +24,8 @@
 22. favicon.ico?
 23. File upload and download [--Done in FileUploadDownloadTest project]
 24. Zuul proxy [ --Done in ZuulTest project]
-25. Sleuth [ --Done in ZullTest and RestAPITest1 project]
+25. Sleuth [ --Done in ZuulTest and RestAPITest1 project]
 25. CORS [ -- Done in CORSTest project and ThymeleafTest project ] 
 26. Flyway [ -- Done in FlywayTest project. (flyway with H2 DB)]
 27. Hystrix [ -- Done in HystrixTest project]
+28. 
